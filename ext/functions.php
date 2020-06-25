@@ -12,7 +12,7 @@ function generate_links($array)
 	foreach($array as $page => $text)
 	{
 		$string .= url($page, $text);
-	}
+	}	
 	return $string;
 }
 

@@ -1,0 +1,82 @@
+*
+{
+	font-family: Arial Black;
+	padding: 0px;
+	margin: 5px;
+}
+a, a:visited
+{
+	color: blue;
+}
+header, main, footer
+{
+	padding:10px;
+	margin: 0px;
+}
+header, footer
+{
+	xbackground-color: #00e;
+	height: 20px;
+}
+
+header a, footer a
+{
+	color: white;
+	text-decoration: none;
+	background-color: brown;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+}
+
+a:hover
+{
+	color: orange;
+}
+
+.layout
+{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+menu a
+{
+	text-decoration: none;
+	display: block;
+	
+}
+
+a
+{	color: brown;
+	text-decoration: none;
+}
+
+menu a:hover
+{
+	background-color: orange;
+	color: white;
+}
+
+form, input, select, button
+{
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+input[type=submit],
+button
+{
+	background-color: brown;
+	color: white;
+}
+
+input[type=submit]:hover,
+button:hover
+{
+	background-color: darkgrey;
+	color: white;
+}
+
+

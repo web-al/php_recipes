@@ -10,7 +10,16 @@ if(isset($_GET["page"]) == false)
 switch($_GET["page"])
 {
 	case "recipes":	
-		include("recipes.php");
+		if(isset($_GET["recipe_nr"]))
+		{
+			# selected recipe
+			include("recipe_view_details.php");
+		}
+		else
+		{
+			# all recipes
+			include("recipes_view.php");
+		}
 	break;
 	
 	case "add_recipe":	
@@ -41,8 +50,35 @@ switch($_GET["page"])
 					<button type='submit'>Login</button>
 				</form>";			
 		}
-
 	break;
+
+	case "register":
+	
+		if(isset($_POST["new_user"]))
+		{
+			$db = mysqli_connect("localhost","root","","recipes");
+			$login = $_POST["new_user"];
+			$email = $_POST["new_email"];
+			$password = password_hash($_POST["new_password"], PASSWORD_DEFAULT);
+
+			$query = "insert into user (login, password, email)
+						values ('$login','$password','$email')";
+			echo $query;
+			mysqli_query($db,$query);
+			print_r($db);
+			mysqli_close($db);
+		}
+
+		echo "<form method='post'>
+		User:<input type='text' name='new_user'>
+		E-Mail:<input type='text' name='new_email'>
+		Password:<input type='password' name='new_password' />
+		<button type='submit'>Create a profile</button>
+		</form>";			
+
+
+break;	
+
 
 	default:
 		echo "<h1>Error</h1>";

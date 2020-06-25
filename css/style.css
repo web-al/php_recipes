@@ -2,7 +2,8 @@
 /* CSS Document für das Flexbox  Modul CSS*/
 
 .teaser_box{display: flex;
-flex-wrap: wrap;
+flex-wrap: nowrap;
+/*flex-flow: row wrap;*/
 justify-content: space-between;
 margin-top: 1rem;}
 
@@ -42,3 +43,30 @@ color: white;
 @media (max-width:31.25rem){
 	.teaser{width: 100%}
 }
+
+
+/*...
+.layout
+{
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.box_medium
+{
+	width:200px;
+	height:500px;
+	background-color: #eeeeff;
+	border: 1px solid #aaaaff;
+	padding:10px;
+	margin: 10px;
+}
+
+.box_big img,
+.box_medium img,
+.box_small img
+{
+	width: inherit;
+}
+*/
+/*...*/
