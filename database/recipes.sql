@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Erstellungszeit: 21. Jun 2020 um 16:16
+-- Host: localhost
+-- Erstellungszeit: 24. Jun 2020 um 10:23
 -- Server-Version: 10.4.11-MariaDB
--- PHP-Version: 7.4.5
+-- PHP-Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,12 +37,12 @@ CREATE TABLE `cooking_style` (
 --
 
 INSERT INTO `cooking_style` (`cooking_style_nr`, `cooking_style_name`) VALUES
-(1, 'paleo'),
-(2, 'vegan'),
-(3, 'vegetarian'),
-(4, 'gourmet'),
-(5, 'budget_cooking'),
-(6, 'cooking_for_kids');
+(1, 'Paleo'),
+(2, 'Vegan'),
+(3, 'Vegetarian'),
+(4, 'Gourmet'),
+(5, 'Budget-cooking'),
+(6, 'Cooking for kids');
 
 -- --------------------------------------------------------
 
@@ -93,9 +93,9 @@ CREATE TABLE `meal_type` (
 --
 
 INSERT INTO `meal_type` (`meal_type_nr`, `meal_type_name`) VALUES
-(1, 'starter'),
-(2, 'main_course'),
-(3, 'dessert');
+(1, 'Starter'),
+(2, 'Main course'),
+(3, 'Dessert');
 
 -- --------------------------------------------------------
 
@@ -115,7 +115,7 @@ CREATE TABLE `measurement` (
 INSERT INTO `measurement` (`measurement_nr`, `measurement_name`) VALUES
 (1, 'oz'),
 (2, 'cloves'),
-(3, 'NULL'),
+(3, 'piece'),
 (4, 'lb'),
 (5, 'g'),
 (6, 'kg'),
@@ -150,8 +150,11 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`recipe_nr`, `title`, `instructions`, `world_cuisine_fk`, `cooking_style_fk`, `meal_type_fk`, `image`, `score`, `date`) VALUES
-(1, 'Chicken Sweet Potato Skillet', ' Step 1\r\nHeat olive oil in a skillet over medium heat; cook and stir chicken in the hot oil until browned, 3 to 5 minutes. Remove chicken with a slotted spoon and place on a plate.\r\n\r\n Step 2\r\nCook and stir sweet potato in the same skillet over medium heat until slightly browned, 5 to 10 minutes; return chicken to the skillet. Add whiskey, sage, pear, and water; stir well. Partially cover skillet, lower heat to medium-low, and cook until chicken is no longer pink in the center and sweet potato is tender, about 10 minutes.\r\n\r\n Step 3\r\nRemove lid and sprinkle spinach over the chicken-sweet potato mixture; cook, stirring occasionally, until spinach is wilted, about 5 minutes. Stir in hazelnuts; season with salt and black pepper.', 7, 4, 2, '', 1, '2020-06-14 12:31:22'),
-(2, 'Best One Pot Cheese and Macaroni', 'Step 1\r\nPour water and salt into a medium pot and bring to a rolling boil over high heat. Once the water is boiling, stir in the shell pasta, and return to a boil. Cook the pasta uncovered, stirring occasionally, until the water has cooked down a bit, about 5 minutes.\r\n\r\n Step 2\r\nStir in the milk, and continue boiling for another 5 minutes. Add the Cheddar, Parmesan, pepper, and mustard; stir until the cheese melts and the sauce is thick and creamy. The starch from the pasta thickens the sauce as the pasta cooks.', 7, 5, 2, '', 5, '2020-06-14 12:55:53');
+(1, 'Chicken Sweet Potato Skillet', ' Step 1\r\nHeat olive oil in a skillet over medium heat; cook and stir chicken in the hot oil until browned, 3 to 5 minutes. Remove chicken with a slotted spoon and place on a plate.\r\n\r\n Step 2\r\nCook and stir sweet potato in the same skillet over medium heat until slightly browned, 5 to 10 minutes; return chicken to the skillet. Add whiskey, sage, pear, and water; stir well. Partially cover skillet, lower heat to medium-low, and cook until chicken is no longer pink in the center and sweet potato is tender, about 10 minutes.\r\n\r\n Step 3\r\nRemove lid and sprinkle spinach over the chicken-sweet potato mixture; cook, stirring occasionally, until spinach is wilted, about 5 minutes. Stir in hazelnuts; season with salt and black pepper.', 3, 4, 2, '\r\n5ef1a5a5423ea.jpg', 1, '2020-06-23 06:49:12'),
+(2, 'Best One Pot Cheese and Macaroni', 'Step 1\r\nPour water and salt into a medium pot and bring to a rolling boil over high heat. Once the water is boiling, stir in the shell pasta, and return to a boil. Cook the pasta uncovered, stirring occasionally, until the water has cooked down a bit, about 5 minutes.\r\n\r\n Step 2\r\nStir in the milk, and continue boiling for another 5 minutes. Add the Cheddar, Parmesan, pepper, and mustard; stir until the cheese melts and the sauce is thick and creamy. The starch from the pasta thickens the sauce as the pasta cooks.', 7, 5, 2, '5ef1a2d2b28b5.jpg', 5, '2020-06-23 06:36:33'),
+(5, 'Roasted Brussels Sprouts', 'Step 1 - Preheat oven to 400 degrees F (205 degrees C).\r\n\r\nStep 2 - Place trimmed Brussels sprouts, olive oil, kosher salt, and pepper in a large resealable plastic bag. Seal tightly, and shake to coat. Pour onto a baking sheet, and place on center oven rack.\r\n\r\nStep 3 - Roast in the preheated oven for 30 to 45 minutes, shaking pan every 5 to 7 minutes for even browning. Reduce heat when necessary to prevent burning. Brussels sprouts should be darkest brown, almost black, when done. Adjust seasoning with kosher salt, if necessary. Serve immediately.\r\n', 1, 5, 4, '5ef1a2d2b28b5.jpg', 4, '2020-06-24 06:01:26'),
+(6, 'Easy Sugar Cookies', 'Step 1 - Preheat oven to 375 degrees F (190 degrees C). In a small bowl, stir together flour, baking soda, and baking powder. Set aside.\r\nStep 2 - In a large bowl, cream together the butter and sugar until smooth. Beat in egg and vanilla. Gradually blend in the dry ingredients. Roll rounded teaspoonfuls of dough into balls, and place onto ungreased cookie sheets.\r\nStep 3 - Bake 8 to 10 minutes in the preheated oven, or until golden. Let stand on cookie sheet two minutes before removing to cool on wire racks.\r\n', 3, 5, 6, '', 5, '2020-06-24 06:01:15'),
+(7, 'Baked Yam Fries with Dip', 'Step 1\r\n\r\nPreheat an oven to 350 degrees F (175 degrees C). Spread the olive oil over a baking sheet.\r\nStep 2\r\n\r\nArrange the yams on the prepared baking sheet in a single layer; season with the seasoned salt.\r\nStep 3\r\n\r\nBake the yams in the preheated oven until soft, about 25 minutes.\r\nStep 4\r\n\r\nWhile the yams bake, stir the sour cream, mayonnaise, taco seasoning, and paprika together in a small bowl. Serve as a dip for the yams.\r\n', 1, 2, 3, '', 5, '2020-06-24 06:01:05');
 
 -- --------------------------------------------------------
 
@@ -341,7 +344,7 @@ ALTER TABLE `measurement`
 -- AUTO_INCREMENT für Tabelle `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `recipe_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `recipe_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
